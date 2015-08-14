@@ -1,0 +1,34 @@
+﻿<Window x:Class="AmitCustomerWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AmitCustomerWPF.View"
+        Title="MainWindow" Height="350" Width="525">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" KeyboardNavigation.TabNavigation="None">
+            <Menu KeyboardNavigation.TabNavigation="Cycle">
+                <MenuItem Header="_File">
+                    <MenuItem Header="E_xit" Command="{Binding Path=CloseCommand}" />
+                </MenuItem>
+                <MenuItem Header="_Edit" />
+                <MenuItem Header="_Options" />
+                <MenuItem Header="_Help" />
+            </Menu>
+        </DockPanel>
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"  />
+                <RowDefinition  />
+            </Grid.RowDefinitions>
+             
+            <StackPanel Grid.Row="0">
+                <TextBlock>Hello world from main window</TextBlock>                
+            </StackPanel>
+             
+            <StackPanel Grid.Row="1">
+                <!--<local:ucCustomerView />-->
+                <local:ucAllCustomerView />
+            </StackPanel>
+
+        </Grid>
+    </DockPanel>
+</Window>
